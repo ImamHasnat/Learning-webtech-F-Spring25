@@ -1,1 +1,11 @@
+<?php
 
+$l = 5;
+$w = 7;
+
+$area = $l * $w;
+$perimeter =2 * ($l + $w);
+
+echo "Area:".     $area. "<br>" ;
+echo "perimeter: ".$perimeter;
+?>
