@@ -1,12 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PHP Basic Tasks</title>
+</head>
+<body>
+  <h2>1. Area and Perimeter of a Rectangle</h2>
+  <?php
+  $length = 10;
+  $width = 5;
+  $area = $length * $width;
+  $perimeter = 2 * ($length + $width);
+  echo "Length = $length, Width = $width<br>";
+  echo "Area = $area<br>";
+  echo "Perimeter = $perimeter<br>";
+  ?>
 
-<?php
+  <h2>2. VAT (15%) Calculation</h2>
+  <?php
+  $amount = 1000;
+  $vat = $amount * 0.15;
+  $total = $amount + $vat;
+  echo "Amount = $amount<br>";
+  echo "VAT (15%) = $vat<br>";
+  echo "Total = $total<br>";
+  ?>
 
-$l = 5;
-$w = 7;
+  <h2>3. Odd or Even Check</h2>
+  <?php
+  $number = 7;
+  echo "Number = $number<br>";
+  if ($number % 2 == 0) {
+      echo "$number is Even<br>";
+  } else {
+      echo "$number is Odd<br>";
+  }
+  ?>
 
-$area = $l * $w;
-$perimeter =2 * ($l + $w);
+  <h2>4. Find the Largest of Three Numbers</h2>
+  <?php
+  $a = 12;
+  $b = 25;
+  $c = 18;
+  echo "Numbers: a = $a, b = $b, c = $c<br>";
+  if ($a >= $b && $a >= $c) {
+      echo "Largest number is: $a<br>";
+  } elseif ($b >= $a && $b >= $c) {
+      echo "Largest number is: $b<br>";
+  } else {
+      echo "Largest number is: $c<br>";
+  }
+  ?>
 
-echo "Area:".     $area. "<br>" ;
-echo "perimeter: ".$perimeter;
-?>
+  <h2>5. Odd Numbers from 10 to 100</h2>
+  <?php
+  for ($i = 10; $i <= 100; $i++) {
+      if ($i % 2 != 0) {
+          echo "$i ";
+      }
+  }
+  ?>
+</body>
+</html>
