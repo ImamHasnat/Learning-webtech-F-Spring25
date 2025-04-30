@@ -1,1 +1,33 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Product</title>
+</head>
+<body>
+  <h2>Edit Product</h2>
+
+  <?php
+  $conn = new mysqli("localhost", "root", "", "product_db");
+
+  if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    $res = $conn->query("SELECT * FROM products WHERE id = $id");
+    $row = $res->fetch_assoc();
+  }
+  ?>
+
+  <form action="edit.php" method="POST">
+    <input type="hidden" name="id" value="<?= $row['id'] ?>">
+    Name: <input type="text" name="name" value="<?= $row['name'] ?>"><br>
+    Price: <input type="number" name="price" value="<?= $row['price'] ?>"><br>
+    Quantity: <input type="number" name="quantity" value="<?= $row['quantity'] ?>"><br>
+    Display:
+    <select name="display">
+      <option value="Yes" <?= $row['display'] == 'Yes' ? 'selected' : '' ?>>Yes</option>
+      <option value="No" <?= $row['display'] == 'No' ? 'selected' : '' ?>>No</option>
+    </select><br><br>
+    <input type="submit" value="Update">
+  </form>
+</body>
+</html>
